@@ -10,6 +10,11 @@
   + _python ex1.py_
   + _python ex2.py_
 
+OR
+
+* Run the batch script in order to also execute the STAR commands, tests, etc.:
+  * _bash run_me.sh_
+
 
 ### II. Exercises
 
@@ -23,3 +28,7 @@
 * \# of uniquely mapped alignments: 0
 * \# of multi-mapped alignments: 26
 * The last point I did not know how to do, hence I can not say if the numbers match.
+
+3. Remark:
+* My code coverage is not quite 100% since the main methods are not tested.
+However, I believe unit tests should not test them, which is why I left it as is.

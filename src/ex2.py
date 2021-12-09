@@ -1,7 +1,15 @@
-from ex1 import map_reads
+from src.ex1 import map_reads
 
 
-def sam_to_fasta(path):
+def sam_to_fasta(path: str) -> str:
+    """ Converts a file from SAM to FASTA format.
+
+    Args:
+        path : path to the FASTA file
+
+    Returns:
+        str : path to the SAM file
+    """
     with open(path, 'r') as sam_f:
         lines = sam_f.readlines()
         fasta_path = path.replace('.sam', '.fa')
@@ -21,5 +29,5 @@ if __name__ == '__main__':
     print(sd)
 
     # We can see that my method finds way less mappings than when using STAR.
-    # This is because my method only looks for perfect matches, while STAR allows
-    # for insertions, deletions and mismatches.
+    # This is because my method only looks for perfect matches, while STAR
+    # allows for insertions, deletions and mismatches.
