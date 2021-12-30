@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import List, Tuple, Dict
 
 
@@ -117,7 +118,7 @@ def map_reads(query: str, reference: str) -> Dict[str, Dict[str, List[int]]]:
 
 
 if __name__ == '__main__':
-    query = '../data/sequences.fasta'
-    reference = '../data/genome.fasta'
+    query = str(Path(__file__).parents[1] / 'data/sequences.fasta')
+    reference = str(Path(__file__).parents[1] / 'data/genome.fasta')
     sd = map_reads(query, reference)
     print(sd)

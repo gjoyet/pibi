@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from src.ex1 import map_reads
 
 
@@ -22,9 +24,15 @@ def sam_to_fasta(path: str) -> str:
 
 
 if __name__ == '__main__':
-    path_to_sam = '../data/Aligned.out.sam'
+    path_to_sam = (
+        str(Path(__file__).parents[1] / 'data/mapping/Aligned.out.sam')
+    )
+    reference = (
+        str(Path(
+            __file__
+        ).parents[1] / 'data/Mus_musculus.GRCm38.dna_rm.chr19.fa')
+    )
     query = sam_to_fasta(path_to_sam)
-    reference = '../data/Mus_musculus.GRCm38.dna_rm.chr19.fa'
     sd = map_reads(query, reference)
     print(sd)
 

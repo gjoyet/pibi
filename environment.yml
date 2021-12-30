@@ -1,0 +1,12 @@
+name: pib21-guillaume
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - pip=21.0.1
+  - star=2.7.9a
+  - pip:
+      - flake8==3.8.3
+      - pytest==5.4.3
+      - coverage==6.2
+      - .
